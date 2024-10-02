@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instastories</title>
+    <style>
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+
+}
+.parentcontainer{
+    height: 100vh;
+    width: 100vw;
+    background-color: #0ec0ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.homepage{
+    height: 90%;
+    width: 25%;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.storysection{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.storysection::-webkit-scrollbar{
+    display: none;
+}
+.story{
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    border: 3px solid rgb(236, 0, 118);
+    margin: 15px 5px;  
+    display: inline-block;  
+    overflow: hidden;
+
+}
+.story img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.fullscreen{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="parentcontainer">
+
+        <div class="homepage">
+
+            <div class="fullscreen">
+
+            </div>
+
+            <div class="storysection">
+                
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+let array = [
+{
+    dp:"https://4.bp.blogspot.com/-3AG1MucABF0/Un5J1ufngzI/AAAAAAAAeHk/WsSFTgPhRzM/s1600/Doutzen-Kroes-Face-passion4luxury.jpg",story : "https://th.bing.com/th/id/R.ac6934b43e0d2c590e22b85c6114dfe8?rik=tGu%2bfjzG0VgE7g&riu=http%3a%2f%2fwww.redcottoncandy.com%2fblog%2fwp-content%2fuploads%2f2014%2f08%2fDoutzen-Kroes-10.jpg&ehk=JyHJFk%2fH2szXXbLozQEE2S%2fa3akh5QEex6wtu%2f8rbpQ%3d&risl=&pid=ImgRaw&r=0"
+},
+{
+    dp : "https://i.pinimg.com/originals/44/64/b8/4464b8e9b919d47dd0effcdb871c09b3.jpg",story: "https://flxt.tmsimg.com/assets/692001_v9_ba.jpg"
+
+},
+{
+    dp : "https://ilarge.lisimg.com/image/20532237/740full-rosie-day.jpg",story : "https://th.bing.com/th/id/OIP.I-mTqgUrZC0aIfmvUfbCfwAAAA?w=250&h=312&rs=1&pid=ImgDetMain"
+
+},
+{
+    dp : "https://th.bing.com/th/id/OIP.C7ZZMgJw1CnWDgAbLujBmwAAAA?rs=1&pid=ImgDetMain",story : "https://th.bing.com/th/id/OIP.ogivzKbMPozwNfV7-abowQHaHa?w=740&h=740&rs=1&pid=ImgDetMain"
+},
+{
+    dp : "https://th.bing.com/th/id/OIP.pz1Av0XNhDTo2rt6R8GdXwHaHV?w=735&h=728&rs=1&pid=ImgDetMain",story : "https://th.bing.com/th/id/OIP.pz1Av0XNhDTo2rt6R8GdXwHaHV?w=735&h=728&rs=1&pid=ImgDetMain "
+
+},
+]
+
+let storysection = document.querySelector(".storysection");
+let clutter = "";
+let fullscreen = document.querySelector(".fullscreen");
+
+array.forEach(function(elem,idx){
+    clutter += `<div class="story">
+                    <img id = "${idx}" src="${elem.dp}" alt="">
+                </div>`;
+                
+})
+storysection.innerHTML = clutter;
+
+
+storysection.addEventListener("click", (dets) => {
+
+    let clickedDp = array[dets.target.id].story;
+    fullscreen.style.backgroundImage = `url(${clickedDp})`;
+    fullscreen.style.display = "block";
+
+    setTimeout(() => {
+        fullscreen.style.display = "none";
+    }, 3000);
+})
+
+
+
+    </script>
+</body>
+</html>

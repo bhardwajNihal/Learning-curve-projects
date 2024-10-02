@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddFriend</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:  sans-serif;
+        }
+        .parentcontainer{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(197, 147, 236);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profilebox{
+            height: 350px;
+            width: 250px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .imagepart{
+            height: 40%;
+            width: 90%;
+            margin: auto;
+            background-color: red;
+            border-radius: 10px;
+            margin-top: 10px;
+            
+        }
+        .imagepart img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px 10px 0 0 ;
+            object-fit: cover;      
+        }
+
+        .infopart{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .infopart h3{
+            font-size: 30px;        
+            margin-bottom: 15px;
+        }
+        .infopart h4{
+            font-size: 20px;    
+            color: maroon;
+            margin-bottom: 30px;
+        }
+        #addfriend{
+            padding: 7px 13px;
+            background-color: rgb(205, 204, 204);
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(103, 211, 186);
+        }
+        #remove:hover, #addfriend:hover{
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<div class="parentcontainer">
+
+    <div class="profilebox">
+        <div class="imagepart">
+            <img src="https://c4.wallpaperflare.com/wallpaper/339/83/628/look-girl-natalia-vladislav-opletaev-hd-wallpaper-preview.jpg" alt="">
+        </div>
+
+        <div class="infopart">
+
+            <h3>Angel Priya</h3>
+            <h4 id="status">Stranger</h4>
+            <div class="buttons">
+                <button id="addfriend">Add Friend <span id="addicon">+</span></button>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+let statustext = document.querySelector("#status");
+let check =0;
+
+document.querySelector("#addfriend").addEventListener("click", () => {
+    if(check==0){
+        statustext.innerHTML = "Friends";
+        statustext.style.color = "green";
+        document.querySelector("#addfriend").innerHTML = "Remove";
+        check = 1;
+        document.querySelector("#addicon").style.display = "none";
+    }
+    else{
+        statustext.innerHTML = "Stranger";
+        document.querySelector("#addfriend").innerHTML = "Add Friends +";
+        statustext.style.color = "maroon";
+        check = 0;
+        document.querySelector("#addicon").style.display = "inline";
+    }
+    
+    
+})
+
+document.querySelector("#remove").addEventListener("click", ()=>{
+    
+})
+
+</script>
+</body>
+</html>

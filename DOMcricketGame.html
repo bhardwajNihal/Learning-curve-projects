@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>cricket</title>
+
+<style>
+#bat,#ball,#stump{
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 15px;
+}
+#bat:hover{
+    transform: scale(1.04); 
+    background-color: rgba(255, 0, 0, 0.183);
+}
+#ball:hover{
+    transform: scale(1.04); 
+    background-color: rgba(255, 0, 0, 0.183);
+}
+#stump:hover{
+    transform: scale(1.04); 
+    background-color: rgba(255, 0, 0, 0.183);
+}
+.score{
+    height: 100%;
+    width: 130px;
+    background-color: rgb(210, 208, 208);
+    border: 2px solid blue;
+}
+#submit{
+    padding: 10px 30px;
+    margin-top: 20px;
+    border: solid 2px rgb(126, 16, 16);
+}
+#finalresult{
+   text-align: center;
+   margin-top: -200px;
+   font-size: xx-large;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+</style>
+
+
+</head>
+<body>
+    
+<h2>cricket game</h2>
+
+<button id="bat">🏏Bat</button>
+<button id="ball">🥎Ball</button>
+<button id="stump">||| stump</button>
+
+<h4 id="you">you selected : </h4>
+<h4 id="computer">computer selected : </h4>
+
+<h3 id="result">result : </h3>
+
+<div class="score" >
+    <h3 style="text-align: center;"><u>Score</u></h3>
+    <h4 class="yourscore">You : </h4>
+    <h4 class="compscore">Computer : </h4>
+</div>
+
+<button id="submit">Submit</button>
+
+<h2 id="finalresult"></h2>
+
+
+<script>
+
+let arr = ["bat","ball","stump"];
+
+let score1 = 0;
+let score2 = 0;
+let yourscore = document.querySelector(".yourscore");
+let compscore = document.querySelector(".compscore");
+
+let computerselect = document.querySelector("#computer");
+let youselect = document.querySelector("#you")
+
+let batbutton = document.querySelector("#bat");
+let ballbutton = document.querySelector("#ball");
+let stumpbutton = document.querySelector("#stump");
+
+let resultcontent = document.querySelector("#result");
+
+let submit = document.querySelector("#submit");
+let finalresult = document.querySelector("#finalresult");
+
+
+function getrandomselection(){
+    let random = Math.floor(Math.random()*3);
+    return arr[random];
+}
+
+function playgame(userchoice){
+    let computerChoice = getrandomselection();
+    youselect.innerHTML = "you selected : " + userchoice;
+    computerselect.innerHTML = "computer selected : " + computerChoice;
+
+    if(userchoice==='bat' && computerChoice==="ball"
+        || userchoice==='ball' && computerChoice==="stump"
+        || userchoice==='stump' && computerChoice==="bat")
+        {
+            score1++;
+            resultcontent.innerHTML = "result : You won!";
+            yourscore.innerHTML = `You : ${score1}`;
+            
+        }
+
+    else if(userchoice === computerChoice) {
+        resultcontent.innerHTML = "result : It's a tie!";
+    }
+
+    else{
+        score2++;
+        resultcontent.innerHTML = "result :You lose!";
+        compscore.innerHTML = `Computer : ${score2}`;
+        
+    } 
+}
+
+batbutton.addEventListener("click",function(){
+    playgame("bat");
+})
+
+ballbutton.addEventListener("click",function(){
+    playgame("ball");
+})
+
+
+stumpbutton.addEventListener("click",function(){
+    playgame("stump");
+})
+
+submit.addEventListener("click",function(){
+    if(score1>score2){
+        finalresult.innerHTML = "🎉🎉🎉 YOU ARE CHAMPION!!! 🎉🎉🎉"
+    }
+    else if(score1 ==score2){
+        finalresult.innerHTML = "NO ONE WON, IT'S A DRAW!!!";
+    }
+    else {
+        finalresult.innerHTML = "YOU LOSE. BETTER LUCK NEXT TIME!!!"
+    }
+})
+
+
+
+</script>
+</body>
+</html>

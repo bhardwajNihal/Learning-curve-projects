@@ -1,0 +1,84 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+
+
+.calculatorbox{
+    margin-top: 25px;
+    height: 500px;
+    width: 350px;
+    background-color: #333;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+}
+
+#display{
+    height: 10%;
+    width: 95%;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: rgb(83, 100, 114);
+    color: black;
+    font-size: 30px;
+    text-align: end;
+    padding: 6px 10px;
+    box-sizing: border-box;
+}
+.calbutton{
+    height: 50px;
+    width: 50px;
+    border: solid 1px black;
+    color: white    ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: rgb(103, 102, 102);
+    transition: 0.1s;
+}
+#clear{
+    height: 50px;
+    width: 50px;
+    border: solid 1px black;
+    color: white    ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: rgb(103, 102, 102);
+    transition: 0.1s;
+}
+
+#plus,#minus,#multiply,#divide,#remainder,#power{
+
+    width: 51px;
+}
+.result{
+    height: 50px;
+    width: 100px;
+    border: solid 1px black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    background-color: rgb(86, 86, 86);
+    color: white;
+}   

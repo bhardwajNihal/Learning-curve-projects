@@ -1,0 +1,88 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+.parentcontainer{
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5%;
+    flex-wrap: wrap;
+}
+.gamebox{
+    height: 300px;
+    width: 300px; 
+    background-color: #000;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 3px;
+}
+.infobox{
+    margin-top: 5%;
+    margin-left: 30px;
+}
+
+.box{
+    font-size: xx-large ;
+    border: none;
+}
+.box:hover{
+    background-color: rgb(218, 218, 218);
+}
+.reset{
+    margin-top: 40px;
+    padding:10px 25px;  
+    font-weight: 550;
+    margin-left: 30px;
+}
+.start{
+    margin-top: 40px;
+    padding:10px 25px;  
+    font-weight: 550;
+    margin-left: 30px;
+}
+.playerbox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+.player1,.player2{
+    background-color: #fff;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.winner{
+    background-color: #fff;
+    height: 50px;
+    width: 300px;
+    padding-top: 7px;
+    padding-left: 10px;
+    margin: 20px;
+    border-radius: 50px;
+    animation:winanimation 2s ease infinite ;
+    display: none;
+    border: solid 1px red;
+    color: rgb(255, 0, 0);
+}
+.tiemessage{
+    text-align: center;
+}
+
+@keyframes winanimation {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

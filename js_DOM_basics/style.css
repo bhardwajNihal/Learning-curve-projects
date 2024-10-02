@@ -1,0 +1,28 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainbox{
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+#box1,#box2,#box3,#box4{
+    border: rgb(20, 20, 20) 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}   
+  
+.cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: red;
+}

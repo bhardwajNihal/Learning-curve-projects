@@ -1,0 +1,318 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif   ;
+}
+
+.parentcontainer{
+    background-color: #212121;  
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainscreen{
+    height: 90%;
+    width: 22%;
+    background-color: #e8e6e6;
+    border-radius: 2px;
+}
+.navbar{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.menuicon,.carticon{
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+.carticon{
+    position: relative;
+}
+
+.cartexpand{
+    background-color: rgb(213, 228, 236);
+    position:absolute;
+    top: 10%;
+    left: 48%;
+    height:auto;
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 5px;
+    display: none;
+
+}
+.cartitem{
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    gap: 5px;
+    margin: 3px;
+}
+.cartitemimage{
+    height: 100%;
+    width: 30%;
+}
+.cartitemimage img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.cartitemname{
+    font-size: small;
+    font-weight: 550;
+}
+.cartitemprice{
+    font-size: smaller;
+}
+
+.searchbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+}
+.searchbar input{
+    width: 80%;
+    height: 75%;
+    border: none;
+    background-color: rgb(212, 210, 210);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+.slidericon{
+    background-color: black;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.options{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.optionicon{
+    box-shadow: 0 2px 2px rgb(186, 185, 185);
+    border-radius: 50%;
+    padding: 6px;
+}
+
+#icon{
+    color: rgb(79, 79, 79);
+}
+#icon:hover{
+    cursor: pointer;
+    background-color: rgb(237, 236, 236);
+    transform: scale(1.1);
+}
+
+.productsection1{
+    height:40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding:0 5px;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.productsection1::-webkit-scrollbar{
+    display: none;
+}
+
+.product{
+    height: 100%;
+    min-width: 60%; 
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.productimage{
+    height: 55%;
+    width: 95%;
+    border-radius: 5px; 
+    overflow: hidden; 
+
+
+}
+.productimage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.imagedescription{
+    width: 95%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.descriptiontext{
+    width:80%; 
+
+
+}
+.descriptiontext h3{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.descriptiontext p{
+    font-size: 10px;
+    margin-top: 10px;   
+    color: rgb(87, 85, 85);
+}
+.descriptiontext h4{
+    font-size: 13px;
+    margin-top: 10px;
+}
+.addtocarticon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: #fff;
+    margin-top: 20%;
+    font-size: 20px;
+    color: rgb(218, 215, 215);
+    
+}
+.addtocarticon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.productsection2{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding-left: 2px;
+    gap: 10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-right: 5px;
+}
+.productsection2::-webkit-scrollbar{
+    display: none;
+}
+
+.product2{
+    height: 100%;
+    min-width: 70%;
+    display: flex;
+    border-radius: 5px;
+    background-color: #fff;
+    white-space: wrap;
+    padding-right: 5px;
+}
+
+
+.productimages2{
+    height: 90%;
+    min-width: 40%;
+    margin: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+.productimages2 img{
+    height: 100%;width: 100%;
+    object-fit: cover;
+}
+#s2heading{
+    margin: 15px 0 10px 10px;
+}
+
+.imagedescriptions2{
+    min-width: 60%;
+}
+.productsection2 h3{
+    font-size: 0.8em;
+    margin-top: 5%;
+}
+.productsection2 p{
+    font-size: small;
+    margin-top: 5%;
+    color: rgb(87, 85, 85);
+}
+.productsection2 h4{
+    font-size: small;
+    margin-top: 5%;
+}
+
+.bottomsection{
+    height: 8%;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    padding: 10px;
+}
+
+.bottomicon{
+    padding: 7px 9px;
+    border-radius: 50%;
+    color: grey;
+    transition: 0.1s;
+}
+.bottomicon3{
+    background-color: #212121;
+    color: gold;
+    font-size: small;
+    padding: 10px 11px;
+    position: absolute;
+    top: -20%;
+    left: 43%;
+    box-shadow: 0 5px 15px rgb(102, 101, 101);
+}
+.bottomicon2{
+    margin-left: -30px;
+}
+.bottomicon4{
+    margin-left: 50px;
+}
+.bottomicon5{
+    margin-left: -25px;
+}
+.bottomicon1:hover,
+.bottomicon2:hover,
+.bottomicon4:hover,
+.bottomicon5:hover{
+    cursor: pointer;
+    background-color: #e9e9e9;
+    transform: scale(1.1);
+}
+.bottomicon3:hover{
+    cursor: pointer;
+    transform: scale(1.1)   ;
+}

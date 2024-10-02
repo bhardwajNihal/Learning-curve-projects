@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popping Images</title>
+    <style>
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+}
+
+.maincontainer{
+    height: 100vh;
+    width: 100vw;
+}
+.element1,.element2,.element3,.element4,.element5{
+    height:30%;
+    width: 100%;
+    border-bottom: 0.1px solid #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    z-index: 1;
+}
+
+.element1 img,.element2 img,.element3 img,.element4 img,.element5 img{
+    position: absolute;
+    height: 100%;
+    width: 160px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 30px;
+    mix-blend-mode:difference;          /*difference can be used*/
+    opacity: 0;
+    transition: 0.3s ease-out;
+    z-index: 10;
+}
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="maincontainer">
+        <div class="element1">
+            <h1>Batman</h1>
+            <img src="https://th.bing.com/th/id/OIP.U7ov1zhGCBO9akQpIbw_RgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="">
+        </div>
+        <div class="element2">
+            <h1>Ironman</h1>
+            <img src="https://th.bing.com/th/id/R.e90a6cf5fb956bb550eb082bed426ba2?rik=hT83oHDFSolGlQ&riu=http%3a%2f%2ffc09.deviantart.net%2ffs70%2ff%2f2012%2f134%2f3%2fe%2fthe_avengers___ironman_by_stephencanlas-d4zpaxl.jpg&ehk=GMUlQ1gOjUlL9CzGWCqYwzpRcDnKwHHY40IURTa6bGU%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </div>
+        <div class="element3">
+            <h1>Captain America</h1>
+            <img src="https://i.pinimg.com/originals/30/e2/5a/30e25a09519267e1ea4606f2188d4df5.jpg" alt="">
+        </div>
+        <div class="element4">
+            <h1>Spiderman</h1>
+            <img src="https://th.bing.com/th/id/R.d17cc58293cb178da4fc9750fc475e99?rik=iSj4Eqc%2fxPGTSg&riu=http%3a%2f%2fhdwpro.com%2fwp-content%2fuploads%2f2018%2f08%2f3D-Spiderman-Wallpaper.jpg&ehk=GtX2aYyDGrrAPJCZGDQTrjF4trnDqNcASbjoz8mREa4%3d&risl=&pid=ImgRaw&r=0" alt="">
+        </div>
+        <div class="element5">
+            <h1>Thor</h1>
+            <img src="https://nypost.com/wp-content/uploads/sites/2/2017/11/mcdthra_ec010.jpg?quality=90&strip=all&w=1200" alt="">
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+function AddHoverEffect(elementclass){
+
+    let element = document.querySelector(`.${elementclass}`);
+    let eleimage = document.querySelector(`.${elementclass} img`)
+
+    element.addEventListener("mouseenter",() =>{
+        eleimage.style.opacity = "1";
+        eleimage.style.transform = "scale(1.5)"
+    })
+    element.addEventListener("mouseleave",() =>{
+        eleimage.style.opacity = "0";
+    })
+    element.addEventListener("mousemove",function(dets){
+        eleimage.style.left = dets.x + "px";
+        // eleimage.style.top = dets.y + "px";
+    })
+}
+
+AddHoverEffect("element1");
+AddHoverEffect("element2");
+AddHoverEffect("element3");
+AddHoverEffect("element4");
+AddHoverEffect("element5");
+
+
+    </script>
+</body>
+</html>

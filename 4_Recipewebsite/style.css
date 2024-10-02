@@ -1,0 +1,80 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+#navbar{
+    height: 10vh;width: 100%;
+    background-color:gold;
+    box-shadow: -2px 2px 70px rgb(255, 111, 0);
+}
+#navlist{
+    list-style: none;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}   
+a{
+    text-decoration: none;
+    color:rgb(48, 117, 244);
+}
+#info{
+    font-size: 100%;
+    margin: 10px;
+    display: flex;
+    gap: 30px;
+}
+@media (max-width:500px) {
+    #info{
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+#name{
+    font-size:2.5rem;
+    color: rgb(249, 246, 241);
+    text-shadow: -1px 1px 2px rgb(193, 5, 5);
+    margin: 4px;
+    font-family: "Poetsen One", sans-serif;
+}
+body{
+background: rgb(181,195,34);
+background: linear-gradient(0deg, rgba(181,195,34,1) 37%, rgba(253,212,45,0.6308648459383753) 66%);
+}
+.maincontainer{
+    height:100%;width: 70vw ;
+    background-color:rgb(242, 236, 236)  ;
+    border: 2px solid rgb(247, 153, 153) ;
+    margin: auto;
+    overflow-y:auto;
+}
+.footsection{
+    height: 4vh;width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+    background-color: rgb(168, 167, 167);
+}
+.fooditem1{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+#r1pic{
+    height: 270px;width: 300px;
+    border-radius: 30px;
+    box-shadow: -5px 5px 10px black;
+    transition-duration: 0.2s;
+    max-width: 100%;
+}
+#r1pic:hover{
+    transform :scale(1.05)
+}
+h2{
+    color:goldenrod;
+}
+h3{
+    color: rgb(134, 121, 7);
+}
+p{
+    color: grey;
+}
